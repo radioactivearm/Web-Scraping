@@ -32,6 +32,39 @@
                 </div>
             </div>
         </div>
+        <div class='row'>
+            <div class='col-md-12'>
+                <h3>Mars Hemispheres</h3>
+                <hr>
+            </div>
+        </div>
+        <div class='row'>
+            <!-- {% for flat in mission.hemisphere %}
+            <div class='col-md-3'>
+                <div class='card'>
+                    <div class='card-body'>
+                        <img class='card-img-top' src='...' alt='Img of Hemisphere'>
+                        <h5 class='card-title'>{{flat.title}}</h5>
+                    </div>
+                </div>
+            </div>
+            {% endfor %} -->
+            <ul>
+                {% for flatearth in mission.hemishperes %}
+  
+                    <div class='col-md-3'>
+                        <div class='card'>
+                            <div class='card-body'>
+                                <li style='list-style: none;'><img class='card-img-top' src={{flatearth.img_url}} alt='Img of Hemisphere'></li>
+                                <li style='list-style: none;'><h5 class='card-title'>{{flatearth.title}}</h5></li>
+                            </div>
+                        </div>
+                    </div>
+
+                {% endfor %}
+            </ul>
+
+        </div>
 
 
     </div>
