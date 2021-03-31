@@ -125,7 +125,7 @@ def scrape():
     hemi = sphere()
 
     mars = {
-        'title': title, 'teaser': teaser, 'feature_url': url,
+        'article_title': title, 'article_teaser': teaser, 'feature_url': url,
         'table': html, 'hemispheres': hemi
     }
 
