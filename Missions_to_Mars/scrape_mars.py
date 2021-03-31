@@ -130,6 +130,3 @@ def scrape():
     }
 
     return mars
-
-
-print(scrape())

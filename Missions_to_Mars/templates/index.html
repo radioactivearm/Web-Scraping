@@ -16,8 +16,17 @@
         </div>
         <div class='row'>
             <div class='col-md-12'>
-                <h3 class='article-head'>{{mission_info['article_title']}}</h3>
-                <p class='article-body'>{{mission_info['article_teaser']}}</p>
+                <h3 class='article-head'>{{mission.article_title}}</h3>
+                <p class='article-body'>{{mission.article_teaser}}</p>
+            </div>
+        </div>
+        <div class='row'>
+            <div class='col-md-8'>
+                <h3>Featured Mars Image</h3>
+                <img src={{mission.feature_url}} style='width:100%'>
+            </div>
+            <div class='col-md-4'>
+                
             </div>
         </div>
 

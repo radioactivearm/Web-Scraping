@@ -12,7 +12,11 @@ mongo = PyMongo(app)
 @app.route("/")
 def index():
     mission_info = mongo.db.mission.find_one()
-    return (render_template("index.html", mission_info=mission_info))
+    # return (render_template("index.html", article_title=mission_info['article_title'],
+    #     article_teaser=mission_info['article_teaser'], featured_url=mission_info['featured_url'],
+    #     table=mission_info['table'], title=mission_info['hemisphere']['title'], img_url=mission_info['hemisphere']['img_url']))
+    return render_template('index.html', mission=mission_info)
+
 
 @app.route("/scrape")
 def rocket():
