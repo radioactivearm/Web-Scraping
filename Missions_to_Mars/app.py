@@ -11,18 +11,22 @@ mongo = PyMongo(app)
 
 @app.route("/")
 def index():
+    # takes info from mongo database (mars_mission) the colletion is (mission)
     mission_info = mongo.db.mission.find_one()
-    # return (render_template("index.html", article_title=mission_info['article_title'],
-    #     article_teaser=mission_info['article_teaser'], featured_url=mission_info['featured_url'],
-    #     table=mission_info['table'], title=mission_info['hemisphere']['title'], img_url=mission_info['hemisphere']['img_url']))
+
+    # renders the template of index.html with this info filling in the blanks
     return render_template('index.html', mission=mission_info)
 
 
 @app.route("/scrape")
 def rocket():
+    # creating collection connection
     mission = mongo.db.mission
+    # scraping
     mission_info = scrape_mars.scrape()
+    # upserting into db
     mission.update({}, mission_info, upsert=True)
+    # redirect back index.html page
     return redirect("/", code=302)
 
 if __name__ == "__main__":
