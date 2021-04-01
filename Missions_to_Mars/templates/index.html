@@ -39,31 +39,16 @@
             </div>
         </div>
         <div class='row'>
-            <!-- {% for flat in mission.hemisphere %}
-            <div class='col-md-3'>
-                <div class='card'>
-                    <div class='card-body'>
-                        <img class='card-img-top' src='...' alt='Img of Hemisphere'>
-                        <h5 class='card-title'>{{flat.title}}</h5>
-                    </div>
-                </div>
-            </div>
-            {% endfor %} -->
-            <ul>
-                {% for flatearth in mission.hemispheres %}
-  
-                    <div class='col-md-3'>
-                        <div class='card'>
-                            <div class='card-body'>
-                                <li style='list-style: none;'><img class='card-img-top' src={{flatearth.img_url}} alt='Img of Hemisphere'></li>
-                                <li style='list-style: none;'><h5 class='card-title'>{{flatearth.title}}</h5></li>
-                            </div>
+            {% for flatearth in mission.hemispheres %}
+                <div class='col-md-3'>
+                    <div class='card'>
+                        <div class='card-body'>
+                            <img class='card-img-top' src={{flatearth.img_url}} alt='Img of Hemisphere'>
+                            <h5 class='card-title'>{{flatearth.title}}</h5>
                         </div>
                     </div>
-
-                {% endfor %}
-            </ul>
-
+                </div>
+            {% endfor %}
         </div>
 
 
