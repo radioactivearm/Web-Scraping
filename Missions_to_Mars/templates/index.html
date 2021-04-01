@@ -8,10 +8,9 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
 </head>
 
-<!-- <body style='font-family: futura, Trebuchet MS, Arial, sans-serif'> -->
 <body>
     <div class='container'>
-        <div class='jumbotron text-center'>
+        <div class='jumbotron text-center' style='margin-top: 20px'>
             <h1>Mars Mission</h1>
             <p><a class="btn btn-primary btn-lg"  style='background-color: rgb(188,39,50); border-color: rgb(188,39,50);' href="/scrape" role="button">Take a Rocket to Mars</a></p>
         </div>
@@ -61,7 +60,7 @@
         <div class='row'>
             {% for flatearth in mission.hemispheres %}
                 <div class='col-md-3'>
-                    <div class='card'>
+                    <div class='card' style='margin-bottom: 20px'>
                         <div class='card-body'>
                             <img class='card-img-top' src={{flatearth.img_url}} alt='Img of Hemisphere'>
                             <h5 class='card-title'>{{flatearth.title}}</h5>
@@ -71,6 +70,13 @@
             {% endfor %}
         </div>
 
+
+        
+        <div class='row'>
+            <div class='col-md-12' style='text-align: right'>
+                <em><p style='color:rgb(188,39,50)'>Andy McRae</p></em>
+            </div>
+        </div>
 
     </div>
 
