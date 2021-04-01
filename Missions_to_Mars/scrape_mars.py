@@ -18,6 +18,9 @@ def news():
     # pulling first title and teaser
     title = soup.find('div', class_='content_title').text
     teaser = soup.find('div', class_='article_teaser_body').text
+    # quits browser
+    browser.quit()
+
     return (title, teaser)
 
 def space():
@@ -35,7 +38,7 @@ def space():
     anchor = soup.find('a', class_='showimg fancybox-thumbs')
     # half the featured_image_url
     image_url = anchor['href']
-
+    #quits browser
     browser.quit()
 
     # joining urls
@@ -52,7 +55,7 @@ def facts():
     # pick out table i want 
     mars_table = tables[1]
     # convert to html format
-    mars_html = mars_table.to_html(header=False, index=False)
+    mars_html = mars_table.to_html(header=False, index=False, classes=['table-striped', 'table-bordered'])
 
     return mars_html
 
@@ -104,6 +107,7 @@ def sphere():
         html = browser.html
         soup = bs(html, 'html.parser')
         
+    # quits browser
     browser.quit()
 
     mars = []
