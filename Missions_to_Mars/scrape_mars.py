@@ -84,28 +84,30 @@ def sphere():
 
     images = []
 
-    # loop over the text list
+    # this loops over browsers and pulls out urls of images
     for text in texts:
-        # clicks on the button that has that text (the image)
+        #clicks on image link by partial text
         browser.links.find_by_partial_text(text).click()
         
-        # makes soup out of that new page
+        # create soup of new browser
         html_temp = browser.html
         soup_temp = bs(html_temp, 'html.parser')
         
-        # get href link of the sample button that leads to full image
+        # pulls link href link from sample button
         image_url = soup_temp.find('a', text='Sample')['href']
-        # i had to paste url together this way because when i would click
-        # on the button it would open a tab and the browser would stay on 
-        # the same page, this way i can tell the browser to go to this new page.
+        # pastes together urls to make link to full image
+        # i did it this way because clicking on button opened a new tab
+        # but did not go to that tab this way actually takes you to the page
         full_url = url + image_url
+
+        # sends browser to page of full_image
         browser.visit(full_url)
         
         # make soup out of new page
         html_temp = browser.html
         soup_temp = bs(html_temp, 'html.parser')
         
-        # append full image url to list
+        # appends scraped url to images list
         images.append(soup_temp.find('img')['src'])
         
         # sends back to original browser url
